@@ -1,49 +1,36 @@
-.container {
-    margin: 20px;
+body.container {
+    margin: 0;
     display: grid;
-    height: 200px;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 8rem);
-}
-
-.el1 {
-    background: rgba(255, 154, 72, 0.5);
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    margin: 1rem;
-}
-
-.el2 {
-    background: rgba(255, 0, 0, 0.5);
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 10;
-    margin: 1rem;
-}
-
-.el3 {
-    background: rgba(0, 128, 0, 0.5);
-    grid-column-start: 4;
-    grid-column-end: -1;
-    grid-row-start: 2;
-    grid-row-end: 10;
-    margin: 1rem;
-}
-
-.el4 {
-    background: rgba(0, 4, 255, 0.5);
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 10;
-    grid-row-end: -1;
-    margin: 1rem;
+    grid-template-columns: 20vw 80vw;
+    grid-template-rows: 8rem 64rem 8rem;
+    grid-gap: 1rem;
+    grid-template-areas: "header header"
+                        "side main"
+                        "footer footer";
 }
 
 .el1, .el2, .el3, .el4 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+header.el1 {
+    background: rgba(255, 154, 72, 0.5);
+    grid-area: header;
+}
+
+aside.el2 {
+    background: rgba(255, 0, 0, 0.5);
+    grid-area: side;
+}
+
+main.el3 {
+    background: rgba(0, 128, 0, 0.5);
+    grid-area: main;
+}
+
+footer.el4 {
+    background: rgba(0, 4, 255, 0.5);
+    grid-area: footer;
 }
